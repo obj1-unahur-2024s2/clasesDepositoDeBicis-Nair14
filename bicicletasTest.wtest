@@ -1,0 +1,60 @@
+import bicicletas.*
+
+describe "Test de Bicicletas" {
+  const bicicletaOlmo28    = new Bici(rodado=28,largo=150,marca="Olmo",accesorios=[new Farolito()])
+  const bicicletaLegnano26 = new Bici(rodado=26,largo=110,marca="Legnano",accesorios=[new Farolito(),new Canasto(volumen=8),new Morral(largo=21,tieneOjoDeGato=true)])
+  const bicicletaLegnano20 = new Bici(rodado=20,largo=90,marca="Legnano",accesorios=[new Morral(largo=6,tieneOjoDeGato=false)])
+
+    test "bicicletaOlmo28 tiene altura 85" {
+    assert.equals(85,bicicletaOlmo28.altura())
+  }
+
+    test "bicicletaOlmo28 velocidad es 34" {
+    assert.equals(34,bicicletaOlmo28.velocidad())
+  }
+
+    test "bicicletaOlmo28 carga es 0" {
+    assert.equals(0,bicicletaOlmo28.carga())
+  }
+
+    test "bicicletaOlmo28 peso" {
+    assert.equals(14.5,bicicletaOlmo28.peso())
+  }
+
+    test "bicicletaOlmo28 tiene Luz" {
+    assert.that(bicicletaOlmo28.tieneLuz())
+  }
+
+    test "bicicletaOlmo28 tiene 1 accesorio liviano" {
+    assert.equals(1,bicicletaOlmo28.cantAccesoriosLivianos())
+  }
+
+    test "bicicletaLegnano26 tiene altura 80" {
+    assert.equals(80,bicicletaLegnano26.altura())
+  }
+
+    test "bicicletaLegnano26 velocidad es 28" {
+    assert.equals(28,bicicletaLegnano26.velocidad())
+  }
+
+    test "bicicletaLegnano26 carga es 23" {
+    assert.equals(23,bicicletaLegnano26.carga())
+  }
+
+    test "bicicletaLegnano26 peso 15.5" {
+    assert.equals(15.5, bicicletaLegnano26.peso())
+  }
+
+    test "bicicletaLegnano26 tiene Luz" {
+    assert.that(bicicletaOlmo28.tieneLuz())
+    }
+
+    test "bicicletaLegnano26 tiene 2 accesorio liviano" {
+    assert.equals(2, bicicletaLegnano26.cantAccesoriosLivianos())
+   }
+
+    test "bicicletaLegnano20 carga es 2" {
+    assert.equals(2, bicicletaLegnano20.carga()) 
+   }
+
+}
